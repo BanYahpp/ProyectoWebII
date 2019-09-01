@@ -1,0 +1,29 @@
+Aqui mi proyecto de la materia inge ,
+el archivo es muy pesado con los node_modules de ambos proyectos asi que no los eh incluido
+
+El proyecto incluye la parte de sessiones con token , logeo , encriptacion en los passwords
+y el multer con el fin de subir las fotos requeridas 
+
+Por el lado del cliente agregado el angular maps paara manejar los mapas y marcar coordenadas,
+
+El lado cliente en pag principal crea nuevo usuario y deja logear
+al momento de logear redirecciona a la pagina de fraternidades done lista las que hay y 
+se puede agregar nuevas fraternidades. Tambien esta otro boton que te manda a la pagina de
+ubicaciones donde lista las ya registradas y se presenta un boton para agregar , otro para 
+navegar a la pagina de fraternidades y un botton de logout que redirecciona a la pagina
+principal y hace que el localStorage.clear();[donde se almacena el token temporal sea borrado]
+
+
+Ahora si bien esta estructurado lo de subir img en la 
+parte de fraternidad (en la de ubicacion la borre porque igualmente no puedo enrutar)
+donde estaria foto de la reina y de la danza, en las pruebas si logre 
+crear las carpetas de ruta de envio de fotos y en la base de datos encadenar en un string
+la dirrecion de cada foto para hacer la llamada al cagar la lista de fraternidades 
+o en las marcas de donde va una fraternidad en la ruta , sin embargo no pude manejar el envio 
+entre proyecto de lado de cliente a servidor (guardar los archivos) ,por la parte de registrar la
+ubicacion si funciona y el mapa anda oculto hasta que se de al boton de agregar nueva ubicaion
+donde registra -La fraternidad,dia,fecha (captura  automatica),estado(default 1),latitud y longitud
+que estos se llenan a medida de donde marquemos en el puntero del mapa
+
+
+

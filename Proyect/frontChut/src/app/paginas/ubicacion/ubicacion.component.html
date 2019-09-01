@@ -1,0 +1,46 @@
+<p>ubicacion works!</p>
+
+<div [hidden]="!formulario3">
+        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" >
+                <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                (dragEnd)="markerDragEnd($event)"></agm-marker>
+                </agm-map>
+    <form (ngSubmit)="submit()">
+        <input placeholder="latitude" type="text" [(ngModel)]="ubica.latitude" name="latitude" value="{{latitude}}">
+        <div>Latitude: {{latitude}}</div>
+        <input placeholder="longitude" type="text" [(ngModel)]="ubica.longitude" name="longitude" value="{{longitude}}">        
+        <div >Longitude: {{longitude}}</div>
+        <input placeholder="fraternidad" type="text" [(ngModel)]="ubica.fraternidad" name="fraternidad">       
+        <input placeholder="dia" type="number" [(ngModel)]="ubica.dia" name="dia">
+        <input placeholder="comentario" type="text" [(ngModel)]="ubica.comentario" name="comentario">
+        <input placeholder="fotodir" type="text" [(ngModel)]="ubica.fotodir" name="fotodir">
+        <button type="button" (click)="cancelar()">cancelar</button>
+        <input type="submit" value="enviar">
+    </form>
+    
+</div>
+<button (click)="Frater()">Lista de Fraternidades</button>
+<button (click)="nuevo()">Agregar ubicacion</button>
+<table>
+    <tr>
+        <th>latitude</th>
+        <th>longitude</th>
+        <th>fraternidad</th>
+        <th>dia</th>        
+        <th>comentario</th>
+        <th>fotodir</th>
+        <th>estado</th>
+        <th>fecha</th>        
+    </tr>
+    <tr *ngFor="let item of lista">
+        <td>{{item.latitude}}</td>
+        <td>{{item.longitude}}</td>
+        <td>{{item.fraternidad}}</td>
+        <td>{{item.dia}}</td>
+        <td>{{item.comentario}}</td>
+        <td>{{item.fotodir}}</td>
+        <!--<img src="{{item.fotodir}}" width="300" height="150">-->
+        <td>{{item.estado}}</td>
+        <td>{{item.fecha}}</td>        
+    </tr>
+</table>

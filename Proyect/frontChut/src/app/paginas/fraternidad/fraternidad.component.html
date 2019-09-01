@@ -1,0 +1,49 @@
+<p>fraternidad works!</p>
+<div [hidden]="!formulario2">
+    <form (ngSubmit)="submit()">
+        <input placeholder="nombre" type="text" [(ngModel)]="frater.nombre" name="nombre">
+        <input placeholder="institucion" type="text" [(ngModel)]="frater.institucion" name="institucion">
+        <input placeholder="presidente" type="text" [(ngModel)]="frater.presidente" name="presidente">
+        <input placeholder="delegado" type="text" [(ngModel)]="frater.delegado" name="delegado">
+        <input type="file" name="reina" ng2FileSelect [(ngModel)]="uploader" />
+        <input placeholder="cantidad" type="number" [(ngModel)]="frater.cantidad" name="cantidad">
+        
+        <input placeholder="descripcion" type="text" [(ngModel)]="frater.descripcion" name="descripcion">
+        <input placeholder="hora" type="number" [(ngModel)]="frater.hora" name="hora">
+        <input placeholder="dia" type="number" [(ngModel)]="frater.dia" name="dia">
+        <!--<input type="image" name="reina" ng2FileSelect [uploader]="uploader" /><input type="file" name="dir" class="form-control" id="">-->
+        <input id="photo" type="file" />
+        
+        <button type="button" (click)="cancelar()">cancelar</button>
+        <input type="submit" value="enviar">
+
+    </form>
+</div>
+<button (click)="nuevo()">Agregar Fraternidad</button>
+<table>
+    <tr>
+        <th>nombre</th>
+        <th>institucion</th>
+        <th>presidente</th>
+        <th>delegado</th>
+        <th>reina</th>
+        <th>cantidad</th>
+        <th>danza</th>
+        <th>descripcion</th>
+        <th>hora</th>
+        <th>dia</th>
+    </tr>
+    <tr *ngFor="let item of lista">
+        <td>{{item.nombre}}</td>
+        <td>{{item.institucion}}</td>
+        <td>{{item.presidente}}</td>
+        <td>{{item.delegado}}</td>
+        <td>{{item.reina}}</td>
+        <td>{{item.cantidad}}</td>
+        <!--<img src="{{item.reina}}" width="300" height="150">-->
+        <td>{{item.danza}}</td>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.hora}}</td>
+        <td>{{item.dia}}</td>        
+    </tr>
+</table>

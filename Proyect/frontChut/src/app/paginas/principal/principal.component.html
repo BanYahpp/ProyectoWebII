@@ -1,0 +1,27 @@
+<p>principal RutasChutillos</p>
+
+<div [hidden]="!formulario">
+    <form (ngSubmit)="submit()">
+        <input placeholder="nombre" type="text" [(ngModel)]="usuario.nombre" name="nombre">
+        <input placeholder="apellido" type="text" [(ngModel)]="usuario.apellido" name="apelldio">
+        <input placeholder="login" type="text" [(ngModel)]="usuario.login" name="login">
+        <input placeholder="password" type="password" [(ngModel)]="usuario.password" name="password">
+        <button type="button" (click)="cancelar()">cancelar</button>
+        <input type="submit" value="enviar">
+
+    </form>
+</div>
+<button (click)="nuevo()">Nuevo</button>
+<button (click)="Ubicacion()">Nueva Ubicacion</button>
+<button (click)="LogOut()">Cerrar Session</button>
+
+<div [hidden]="!formulog">
+    <form (ngSubmit)="submit()">
+        <input placeholder="login" type="text" [(ngModel)]="usuario.login" name="login">
+        <input placeholder="password" type="password" [(ngModel)]="usuario.password" name="password">
+        <button type="button" (click)="cancelar()">cancelar</button>
+        <input type="submit" value="enviar">
+
+    </form>
+</div>
+
